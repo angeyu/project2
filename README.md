@@ -7,6 +7,8 @@ Express.js
 
 Handlebars
 
+npm is-vegan
+
 ## Usage
 As a user, you can save (post), access (get), and edit (put) dinner recipes. Clicking on one recipe returns (get) a list of ingredients. From the database of recipes, users can build a 7 day dinner plan (post & get). The dinner plan will also produce a grocery list of ingredients listed in each recipe table (get). 
 
