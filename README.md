@@ -1,4 +1,4 @@
-# App Name -- Recipe Planner
+# Group 2 - Recipe Planner
 
 ## Installation
 Node.js
