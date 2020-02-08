@@ -1,4 +1,4 @@
-# Group 2 - Recipe Planner
+# Group 2 - life+
 
 ## Installation
 Node.js
