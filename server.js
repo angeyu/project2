@@ -30,8 +30,7 @@ app.use(express.static("public"));
 
 
 // Require api routes
-require("./routes/recipesRoutes.js")(app);
-require("./routes/ingredientsRoutes.js")(app);
+require("./routes/apiRoute.js")(app);
 
 
 // Syncing our models and start express app
