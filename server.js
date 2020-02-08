@@ -2,6 +2,9 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 
+//required dotenv to enable environmental variables
+require('dotenv').config()
+
 //Parse incoming req.body and user input
 const bodyParser = require('body-parser');
 

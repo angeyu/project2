@@ -7,8 +7,8 @@ module.exports = function(app) {
 
         //   console.log(res);
         
-        //find everything in the table
-        db.Model.findAll({
+        //find one then return it, else create a new row
+        db.Model.findOne({
   
         }).then(function(data) {
   
@@ -22,7 +22,7 @@ module.exports = function(app) {
 
 
     //** update based on database model **/
-    app.post("/api/intake", function(req, res) {
+    app.post("/api/progress", function(req, res) {
 
         //   console.log(req);
         
@@ -41,7 +41,7 @@ module.exports = function(app) {
 
 
     //** update based on database model **/
-    app.put("/api/intake", function(req, res) {
+    app.put("/api/progress", function(req, res) {
 
         //update the row based on id, and return the result
         db.Model.update(
@@ -51,16 +51,16 @@ module.exports = function(app) {
             req.body,
         {
             where: {
-            id: req.body.id
+                id: req.body.id
             }
 
         }).then(function(data) {
 
             //   console.log(data);
 
-                res.json(data);
+            res.json(data);
 
-            });
+        });
 
     });
 
