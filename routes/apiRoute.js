@@ -43,24 +43,24 @@ module.exports = function(app) {
     //** update based on database model **/
     app.put("/api/intake", function(req, res) {
 
-    //update the row based on id, and return the result
-    db.Model.update(
+        //update the row based on id, and return the result
+        db.Model.update(
 
-        //   console.log(req.body);
+            //   console.log(req.body);
 
-        req.body,
-      {
-        where: {
-          id: req.body.id
-        }
+            req.body,
+        {
+            where: {
+            id: req.body.id
+            }
 
-      }).then(function(data) {
+        }).then(function(data) {
 
-        //   console.log(data);
+            //   console.log(data);
 
-            res.json(data);
+                res.json(data);
 
-        });
+            });
 
     });
 
