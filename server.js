@@ -2,6 +2,9 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 
+//required dotenv to enable environmental variables
+require('dotenv').config()
+
 //Parse incoming req.body and user input
 const bodyParser = require('body-parser');
 
@@ -30,8 +33,7 @@ app.use(express.static("public"));
 
 
 // Require api routes
-require("./routes/recipesRoutes.js")(app);
-require("./routes/ingredientsRoutes.js")(app);
+require("./routes/apiRoute.js")(app);
 
 
 // Syncing our models and start express app
