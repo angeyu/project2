@@ -36,13 +36,13 @@ npm dotev
 * So that I can track my general health and wellness on a daily basis and make sure I'm doing my best to live a good life!
 
 ## Contributing
--- Elizabeth Alexander (front end)
+* Liz Alexander (front end)
 
--- Sarah Dillard (back end)
+* Sarah Dillard (back end)
 
--- Kobii Hoyos-Watkins (back end)
+* Kobii Hoyos-Watkins (back end)
 
--- Angela Yu (front end / project manager)
+* Angela Yu (front end / project manager)
 
 ## License
 
