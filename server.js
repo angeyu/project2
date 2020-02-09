@@ -33,7 +33,7 @@ app.use(express.static("public"));
 
 
 // Require api routes
-require("./routes/apiRoute.js")(app);
+require("./routes/apiRoutes.js")(app);
 
 
 // Syncing our models and start express app
