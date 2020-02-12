@@ -2,8 +2,14 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- bootstrap toggle: developed by the new york times! -->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -86,12 +92,92 @@
             </div>
 
             <div class="col" style="background-color: peachpuff;">
-                    add liz's things
+              <div class="row"> 
+                <div class="jumbotron">
+                      <h1 class="display-4" id="todayDate"></h1>
+                      <h2 class="lead">today, did you...</h2>
+                  </div>
+            </div>
+            <div class="row"> 
+            </div>
+            <div class="row"> <!--water switch-->
+                <div class="col-sm-8"> 
+                    <h4>drink water?</h4> <!--action-->
+                </div>
+                <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                    <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                </div>
+            </div>
+            <div class="row"> <!--water value-->
+                <div class="col-sm-8"> 
+                    <h4>how much?</h4> <!--action-->
+                </div>
+                <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                    <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                </div>
+            </div>
+            <div class="row"> <!--eat switch-->
+                <div class="col-sm-8"> 
+                    <h4>eat enough food?</h4> <!--action-->
+                </div>
+                <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                    <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                </div>
+            </div>
+            <div class="row"> <!--move switch-->
+                <div class="col-sm-8"> 
+                    <h4>move your body?</h4> <!--action-->
+                </div>
+                <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                    <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                </div>
+            </div>
+            <div class="row"> <!--take a moment switch-->
+                <div class="col-sm-8"> 
+                    <h4>take a moment for yourself?</h4> <!--action-->
+                </div>
+                <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                    <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                </div>
+            </div>
+            <div class="row"> <!-- medication switch * -->
+                <div class="col-sm-8"> 
+                    <div class="row">
+                        <h4>take your medication or vitamins?</h4> <!--action-->
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-light" data-toggle="button" aria-pressed="false">i don't take either</button>
+                    </div>
+                </div>
+                <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                    <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                </div>
+            </div>
+            <div class="row"> <!--interact with friends-->
+                <div class="col-sm-8"> 
+                    <h4>interact with friends?</h4> <!--action-->
+                </div>
+                <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                    <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                </div>
+            </div>
+            <div class="row"> <!--submit button-->
+                <input class="btn btn-primary" id="dailySubmitBtn" type="submit" value="Submit">
+            </div>
+            <!--add toast alert affirmation. affirmation api?-->
+        </div>    
             </div>
     </div>
 
     
     <!-- Optional JavaScript -->
+     <!-- bootstrap scripts -->
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ 
+     <!-- bootstrap toggle script -->
+     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
