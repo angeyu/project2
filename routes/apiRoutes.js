@@ -1,58 +1,55 @@
 const db = require("../models");
+const moment = require('moment');
 
 module.exports = function(app) {
 
-    //** update based on database model **/
-    app.get("/", function(req, res) {
+    //get and post request
+   app.get("/", function(req, res) {
 
-        //   console.log(res);
-        
-        //find one then return it, else create a new row
-        db.Model.findOne({
-  
+    //set var for today's date
+    let todaysDate = moment().format('YYYY-MM-DD');
+
+    //run method that will search for an existing record, and if it does not exist will create it
+    db.Intake.findOrCreate({
+
+        //find the record where the date equals today
+        where: { 
+            createdAt: todaysDate 
+        },
+        //if it doesn't exist, create it
+        defaults: { 
+            water: 0 
+        } 
+
         }).then(function(data) {
-  
-        //   console.log(data);
-  
-          res.render("index", data);
-  
-        });
-  
-    });
 
-
-    //** update based on database model **/
-    app.post("/api/progress", function(req, res) {
-
-        //   console.log(req);
-        
-        //create a row from the data sent by the client
-        db.Model.create(req.body)
-        
-            .then(function(data) {
+            // console.log(data[0].dataValues);
+            let parsedData = data[0].dataValues;
             
-        //   console.log(data);
 
-          res.json(data);
+        //render the index and send newObj object
+        res.render("index", { parsedData } );
 
         });
 
     });
+
 
 
     //** update based on database model **/
     app.put("/api/progress", function(req, res) {
 
-        //update the row based on id, and return the result
-        db.Model.update(
+        //set var for today's date
+        let todaysDate = moment().format('YYYY-MM-DD');
 
-            //   console.log(req.body);
-
-            req.body,
-        {
-            where: {
-                id: req.body.id
-            }
+        //update the specific row...
+        db.Intake.update(req.body,
+            
+            {
+            //...that matches today's date
+          where: {
+            createdAt: todaysDate
+          }
 
         }).then(function(data) {
 
