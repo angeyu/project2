@@ -1,3 +1,8 @@
+f2f4d1 lightest
+b2d3be
+89a3b2
+5e6073 darkest
+
 .container {
 
 }
@@ -5,11 +10,48 @@
 
 .header {
     height: 60px;
-    background-color: pink;
+    background-color: #b2d3be;
 }
 
+h1{
+    text-align: center; 
+    padding-top: 20px;
+}
+
+h6{
+    text-align: center;
+}
+
+#placehold{
+    height: 700px; padding: 30px;
+
+}
+
+#todayDate {
+    background-color: salmon; 
+    text-align: center;
+    width: fit-content;
+}
+
+#leftside{
+    background-color: powderblue;
+}
+
+#rightside{
+    background-color: #89a3b2;
+   /* min-width: 100%; */
+}
+
+#listed{
+    margin: 30px;
+
+}
 #planto {
  height: 64px;
+}
+
+#toggles{
+    margin-top: 30px;
 }
 
 #chara {
@@ -22,7 +64,7 @@
 }
 
 h2 {
-    width: 100%;
+    width: 90%;
 }
 #stats {
     display: block;
@@ -35,11 +77,12 @@ h2 {
     width: 100%;
 }
 
-#water, #food, #hug, #hobby, #meditation, #vitamins, #exercise
+#water, #food, #move, #meditate, #vitamins, #hug, #wateramount
 {
-    min-width: 95px;
-    margin: 5px;
-    border-radius: 30px;
+    min-width: 90%;
+    min-height: 40px;
+    margin: 3px 10px 2px;
+    border-radius: 5px;
     float: left;
     background-color: honeydew;
 }
