@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     const Intake = sequelize.define('Intake',{
         water: {
             type: DataTypes.INTEGER,
+            defaultValue: false
         },
         meditate: {
             type: DataTypes.BOOLEAN,
@@ -28,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true,  
         },
             updatedAt: {
-            type: DataTypes.DATETIME,
+            type: DataTypes.DATE,
             allowNull: true, 
         }
 
