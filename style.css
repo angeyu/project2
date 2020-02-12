@@ -1,0 +1,37 @@
+.container {
+
+}
+
+.header {
+    height: 60px;
+    background-color: pink;
+}
+
+#planto {
+ height: 64px;
+}
+
+#chara {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%%;
+  max-height: 400px;
+  align-content: center;
+}
+#stats {
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#water, #food, #hug, #hobby, #meditation, #vitamins, #exercise
+{
+    min-width: 95px;
+    margin: 5px;
+    border-radius: 30px;
+    float: left;
+    background-color: honeydew;
+}
+
+
