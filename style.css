@@ -2,6 +2,7 @@
 
 }
 
+
 .header {
     height: 60px;
     background-color: pink;
@@ -19,11 +20,19 @@
   max-height: 400px;
   align-content: center;
 }
+
+h2 {
+    width: 100%;
+}
 #stats {
     display: block;
     margin-left: auto;
     margin-right: auto;
     
+}
+
+#lead {
+    width: 100%;
 }
 
 #water, #food, #hug, #hobby, #meditation, #vitamins, #exercise
