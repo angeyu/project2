@@ -2,36 +2,36 @@ module.exports = function(sequelize, DataTypes) {
    
     const Intake = sequelize.define('Intake',{
         water: {
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
         },
         meditate: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            defaultValue: false
         },
         medication: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            defaultValue: false
         },
         interaction: {
-            type: DataTypes.STRING,
-            allowNull: true
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
         Goal: {
             type: DataTypes.STRING,
-            allowNull: true
         },
         Food: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            defaultValue: false
+        },
+        createdAt: {
+            type: DataTypes.DATEONLY,
+            allowNull: true,  
+        },
+            updatedAt: {
+            type: DataTypes.DATETIME,
+            allowNull: true, 
         }
 
     })
-    Intake.associate = (models) => {
-        Intake.belongsToMany(models.Users, {
-          through: 'UsersIntake',
-          as: 'users',
-          foreignKey: 'intId'
-        });
-      };
       return Intake;
 }
