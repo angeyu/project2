@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- bootstrap toggle: developed by the new york times! -->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Life +</title>
+  </head>
+
+  <body>
+    <div class="container">
+        <div id="lifeplus" class= "header row">
+                <h1 class= "mx-auto">Life +</h1>
+        </div>
+        <div class= "header row">
+            <h6 class = "mx-auto">Daily self-care tracker</h6>
+        </div>
+        <div id = "placehold" class="content row bg-info">
+            <div id = "leftside" class="col">
+                <div class="row align-items-start">
+                    <div class="col" id="todayDate">
+                      <h1 class="mx-auto">February 8, 2020</h1>
+                    </div>
+                </div>
+                <div class="character mx-auto">
+                    <img src="https://st2.depositphotos.com/3687485/10505/v/950/depositphotos_105052354-stock-illustration-healthy-built-strong-sport-man.jpg" id = "chara" class="img-fluid" alt="character">
+                    <div id="progress">
+                      <h1>Stats</h1>
+                        <ul class="skill-list">
+                          <li class="skill">
+                            <h3>Progress</h3>
+                            <progress class="skill-1" max="100" value="50">
+                              <strong>Skill Level: 50%</strong>
+                            </progress>
+                          </li>
+                          <li class="skill">
+                            <h3>Water</h3>
+                            <progress class="skill-2" max="100" value="75">
+                              <strong>Skill Level: 75%</strong>
+                            </progress>
+                          </li>
+                      
+                        </ul>
+                    </div>
+                </div>
+               
+                <div class="row align-items-end" style="border-radius: 10px; position: absolute; bottom:0; width: 100%;">
+                    <div class="col" style="background-color: rosybrown; text-align: center;">
+                      Health is a state of complete physical, mental and social well-being, and not merely the absence of disease or infirmity. -World Health Organization
+                    </div>
+                </div>
+            </div>
+
+            <div id= "rightside"class="col">
+              <div class="row align-items-start">
+                <div class="col" id="todayDate">
+                  <h1 class="mx-auto">Today, did you...</h1>
+                </div>
+                <div class="mx-auto row" id="listed">
+                  <div id="water">
+                    drink water?
+                    <div id="waterswitch" style="float:right; margin: 2px;">
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                      </label>
+                    </div>
+                  </div>
+              
+                  <div id="wateramount">
+                    how much?
+                  </div>
+                  <div id="food">
+                    eat enough food?
+                  </div>
+                  <div id="move">
+                    move your body?
+                  </div>
+                  <div id="meditate">
+                    take a moment for yourself?
+                  </div>
+                  <div id="vitamins">
+                    take your vitamins?
+                  </div>
+                  <div id="hug">
+                    interact with friends?
+                  </div>
+
+                </div>
+              </div>
+            </div> <!--rightsideclose-->
+        </div> <!--placehold close-->
+      </div> <!--container close-->
+
+    
+    <!-- Optional JavaScript -->
+     <!-- bootstrap scripts -->
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ 
+     <!-- bootstrap toggle script -->
+     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

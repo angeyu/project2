@@ -1,0 +1,18 @@
+.container {
+    background-color: hotpink;
+    height: 500px;
+}
+
+#rightside {
+    background-color: indianred;
+    width: 50%;
+}
+
+#leftside {
+    background-color: khaki;
+    width: 50%;
+}
+
+.align-items-start {
+    background-color: lightblue;
+}
