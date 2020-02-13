@@ -39,10 +39,11 @@ body {
 }
 
 #rightcontent {
-    margin: 10px;
+    margin: 40px 5px;
     font-size: 20px;
     background-color: #e5dfdf;
 }
+
 #healthboi {
     margin: 10px;
 }
@@ -54,13 +55,16 @@ img {
 
 }
 
-h1, h2 {
+#plscenter {
     text-align: center; 
     vertical-align: middle;
+    margin-top: 10px;
+    width: 100%
 }
 
 h1 {
     font-family: 'ABeeZee', sans-serif;
+    font-size: 50px;
 }
 
 h2, h3, h4 {
@@ -74,6 +78,7 @@ h5, h6 {
 #stats {
   background-color: #BFD8BD;
   border-radius: 5%;
+  font-size: 15px;
 }
 
 #statsinner {
@@ -150,9 +155,6 @@ h5, h6 {
     border-radius: 50%;
   }
 
-  #dailySubmitBtn {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-  }
-
+  div {
+    outline: 2px dashed #3E606F;
+}
