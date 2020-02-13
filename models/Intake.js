@@ -2,14 +2,18 @@ module.exports = function(sequelize, DataTypes) {
    
     const Intake = sequelize.define('Intake',{
         water: {
-            type: DataTypes.INTEGER,
-            defaultValue: false
-        },
-        meditate: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
-        medication: {
+        waterAmount: {
+            type: DataTypes.INTEGER,
+            defaultValue: false
+        },
+        meditation: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        pills: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
@@ -17,10 +21,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
-        Goal: {
-            type: DataTypes.STRING,
+        goal: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
-        Food: {
+        whatGoal: {
+            type: DataTypes.STRING
+        },
+        food: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
@@ -28,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DATEONLY,
             allowNull: true,  
         },
-            updatedAt: {
+        updatedAt: {
             type: DataTypes.DATE,
             allowNull: true, 
         }

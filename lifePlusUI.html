@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+
+    
+    <!-- style.css -->
+    <link rel="stylesheet" href="public/assets/css/style.css">
+    <title>Switchboard UI</title>
+</head>
+
 <body>
     <div class="container">
         <!-- header -->
@@ -7,12 +23,12 @@
         <div class="header row" style="background-color: bisque">
             <h6 class = "mx-auto" style="text-align: center;">Daily self-care tracker</h6>
         </div>
-        <!-- user avatar viewer -->
+        <!-- user avatar viewer -- AY -->
         <div class="content row bg-info" style="height: 600px; padding: 30px;">
             <div class="col" style="background-color: powderblue;">
                 <div class="row align-items-start">
                     <div class="col" style="background-color: salmon; text-align: center;">
-                      <h1 class="mx-auto">{ today's date }</h1> <!-- moment.js date --> 
+                      <h1 class="mx-auto" id="todayDate"></h1> <!-- moment.js date --> 
                     </div>
                 </div>
                 <div class="character mx-auto" style="align-content: center;"> <!-- user avatar character image -->
@@ -25,13 +41,10 @@
                 </div>    
             </div>
             
-            <!-- switchboard UI -->
+            <!-- switchboard UI -- LMA -->
             <div class="col-sm" style="background-color: peachpuff;">
                 <div class="row"> 
-                    <div class="jumbotron">
-                          <h1 class="display-4" id="todayDate"></h1>
                           <h2 class="lead">today, did you...</h2>
-                      </div>
                 </div>
                 <div class="row"> 
                 </div>
@@ -40,7 +53,10 @@
                         <h4>drink water?</h4> <!--action-->
                     </div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                    </label>
                     </div>
                 </div>
                 <div class="row"> <!--water value-->
@@ -48,7 +64,7 @@
                         <h4>how much?</h4> <!--action-->
                     </div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                        <input type="text">
                     </div>
                 </div>
                 <div class="row"> <!--eat switch-->
@@ -56,7 +72,10 @@
                         <h4>eat enough food?</h4> <!--action-->
                     </div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
                 <div class="row"> <!--move switch-->
@@ -64,7 +83,10 @@
                         <h4>move your body?</h4> <!--action-->
                     </div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
                 <div class="row"> <!--take a moment switch-->
@@ -72,7 +94,10 @@
                         <h4>take a moment for yourself?</h4> <!--action-->
                     </div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
                 <div class="row"> <!-- medication switch * -->
@@ -85,7 +110,10 @@
                         </div>
                     </div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
                 <div class="row"> <!--interact with friends-->
@@ -93,7 +121,10 @@
                         <h4>interact with friends?</h4> <!--action-->
                     </div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
                     </div>
                 </div>
                 <div class="row"> <!--submit button-->
@@ -104,12 +135,18 @@
 
     </div>
 
+    
     <!-- bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- lifePlusTracker script-->
+    <script src="public/assets/js/lifePlusTracker.js"></script>
 
-    <!-- bootstrap toggle script -->
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
+    
 </body>
+</html>
