@@ -55,7 +55,8 @@ img {
 }
 
 h1, h2 {
-    vertical-align: 20px;
+    text-align: center; 
+    vertical-align: middle;
 }
 
 h1 {
