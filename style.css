@@ -12,6 +12,7 @@ body {
     background-color: #9DE0AD;
     justify-content: center;
     text-align: center;
+    border-radius: 0px 0px 50px 50px;
 }
 
 .container {
@@ -20,36 +21,38 @@ body {
 }
 
 
-#rightside {
+#rightside, #leftside {
     background-color: #CBDBD7;
-    margin: 10px;
+    margin: 6px 3px;
+    border-radius: 10%;
 }
 
 #leftside {
-    background-color: #EDEEC9;
-    margin: 10px;
-    height: 600px;
+    height: 630px;
 }
 
 #leftheader, #rightheader{
     height: 60px;
-    margin: 0px 25%;
+    margin: 10px 25% 10px;
     border-radius: 30px 15px 15px 0px;
     background-color: #64B6AC;
 }
 
 #rightcontent {
-    margin: 40px 5px;
+    margin: 10px 30px;
     font-size: 20px;
-    background-color: #e5dfdf;
+    background-color: #EDEEC9;
+    outline: 2px dashed #3E606F;
 }
 
 #healthboi {
-    margin: 10px;
+    margin: 10px 30px;
+    outline: 2px dashed #3E606F;
+    background-color: #EDEEC9;
 }
 
 img {
-    height: 300px;
+    height: 310px;
     display: block;
     margin: 0 auto;
 
@@ -79,10 +82,12 @@ h5, h6 {
   background-color: #BFD8BD;
   border-radius: 5%;
   font-size: 15px;
+  margin: 10px 30px;
+  outline: 2px dashed #3E606F;
 }
 
 #statsinner {
-    margin: 30px;
+
 }
 
 #activitystats, #waterstats {
@@ -155,6 +160,3 @@ h5, h6 {
     border-radius: 50%;
   }
 
-  div {
-    outline: 2px dashed #3E606F;
-}
