@@ -3,7 +3,7 @@ const moment = require('moment');
 
 module.exports = function(app) {
 
-    //get and post request
+    //executes get to retrieve data from db and post for adding new data to db
    app.get("/", function(req, res) {
 
     //set var for today's date
@@ -23,12 +23,11 @@ module.exports = function(app) {
 
         }).then(function(data) {
 
-            // console.log(data[0].dataValues);
-            let parsedData = data[0].dataValues;
-            
+            //set var to parsed data obj
+            let dataObj = data[0].dataValues;
 
-        //render the index and send newObj object
-        res.render("index", { parsedData } );
+        //render the index and send parsed data to client
+        res.render("index", { dataObj } );
 
         });
 
@@ -36,13 +35,14 @@ module.exports = function(app) {
 
 
 
-    //** update based on database model **/
-    app.put("/api/progress", function(req, res) {
+    //execute put to update existing record with new data in db based on today's date
+    app.put("/api/progress/:todaysDate", function(req, res) {
 
-        //set var for today's date
-        let todaysDate = moment().format('YYYY-MM-DD');
+        //set var for today's date returned from the put request
+        let todaysDate = req.params.todaysDate;
+        
 
-        //update the specific row...
+        //use the data sent from the browser (req.body) to update the specific row...
         db.Intake.update(req.body,
             
             {
@@ -55,6 +55,7 @@ module.exports = function(app) {
 
             //   console.log(data);
 
+            //send data back to the client
             res.json(data);
 
         });

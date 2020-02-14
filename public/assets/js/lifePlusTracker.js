@@ -43,10 +43,11 @@ $("#dailySubmitBtn").click(function() {
     // water tracker bar
     // $("#waterTrackerBar").attr("style", )
     // $("#waterTrackerBar").attr()
-    
-
     //set var for today's date
     let todaysDate = moment().format('YYYY-MM-DD');
+
+    //***********PLEASE UPDATE ************/
+    //update the VALUES below so that they collect the value when the toggle button changes state (true/false/amount)
 
     let updateData = {
         water: true,
