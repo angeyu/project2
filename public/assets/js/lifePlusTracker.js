@@ -12,7 +12,7 @@ function toggleChange() {
     const buttonsArray = document.querySelectorAll(".toggleState");
     console.log(buttonsArray);
     for (let i = 0; i < buttonsArray.length; i++) {
-        const dataStatusVal = [i].dataset.status;
+        const dataStatusVal = buttonsArray[i].dataset.status;
         console.log(dataStatusVal);
         // console.log("data-status");
         // if ("data-status" === "true") {
