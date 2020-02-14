@@ -7,43 +7,36 @@ console.log("#loveyoself")
 const date = moment().format("MMMM Do YYYY");
 $("#todayDate").text(date);
 
-// return all userInput vals to array
-const buttonValueArray = document.querySelectorAll("userInput");
+// *** create api PUT request array before buttons ***
+const apiPutArray = {};
+
+// *** return all userInput vals to array ***
+const buttonValueArray = document.querySelectorAll(".userInput");
 console.log(buttonValueArray);
 
-// *** click event getting user input values from buttons ***
-// on button click function -- called in html attribute
-const userInputBtn = document.getElementsByClassName("toggleStateBtn");
-console.log(userInputBtn);
- 
- function clickedYes() {
-    //$('input[type="checkbox]').setAttribute("checked", "checked");
-    console.log("clickedYes() attr added successfully!")
-}; 
-
-/* // add checked attribute
-$(".userInput").click(function() {
-    console.log("hello button click!")
-    const clickedYesID = $(".userInput").getAttribute("id");
-    console.log(clickedYesID);
-    // $('input[type="checkbox]').attr("checked", "checked");
-}); */
-
-// *** return user input values and push to array as key/value pairs ***
-
-const apiPutArray = {};
-for (let index = 0; index < buttonValueArray.length; index++) {
-    // get key data from button ids
-    const btnKey = buttonValueArray[index].attributes.id.value
-    console.log(btnKey);
-    // get value data from button dataset
-    const btnValue = buttonValueArray[index].dataset.status;
-    console.log(btnValue);
-    // create new key value pair in apiPutArray with btn vals
-    apiPutArray["'" + btnKey + "'"] = "'" + btnValue + "'"
+// *** click event function returning class .active to checked buttons" ***
+function clickedYes() {
+    $("#label").attr("class", "active");
+    console.log("clickedYes() attr added successfully!");
 }
-// check it!
-console.log(apiPutArray);
+// this function is called in the html as an onclick attribute
+
+// function to return html data and create key value pairs of active state buttons and push them to api array
+function activeState() {
+    if ($("#label").hasClass("active")) {
+        const activeBtnID = $("#label").data("id");
+        console.log(activeBtnID);
+    }
+};
+activeState();
+
+// *** return and store waterAmount:""; from html ***
+function waterAmount() {
+    const waterAmountVal = $("#waterAmount").value;
+    console.log(waterAmountVal);
+    apiPutArray["waterAmount"] = waterAmountVal;
+};
+waterAmount();
 
 // *** submit button PUT click event ***  
 $("#dailySubmitBtn").click(function() {
@@ -62,18 +55,7 @@ $("#dailySubmitBtn").click(function() {
 
     const apiPutData = Object.assign(apiPutArray, apiPutArray);
     console.log(apiPutData);
-/*   
-// apiPutData[index] === apiPutArray[index]
-    for (let index = 0; index < apiPutData.length; index++) {
-        console.log("hi! are you here?");
-        console.log(apiPutData[index].keys);
-        console.log(apiPutArray[index].keys);
-
-        if (apiPutData[index].keys === apiPutArray[index].keys) {
-            console.log(apiPutArray[index].value);
-        }
-    };
-*/    
+    
 // PUT api call returning userInput data to SQL table
     $.ajax("/api/progress/" + todayDatePUTReq, {
         type: "PUT",
@@ -82,27 +64,6 @@ $("#dailySubmitBtn").click(function() {
         console.log("data PUT successful!");
     })
 });    
-
-
-// *** toggle button boolean attribute change ***
-// ---- buttons array for loop 
-/*
-const buttonStateArray = document.querySelectorAll(".toggleStateBtn");
-buttonStateArray.forEach(function(index) {
-    console.log(index);
-
-    const dataStatusKey = index.getAttribute("data-status");
-    console.log(dataStatusKey);
-
-    if (dataStatusKey === "true") {
-        console.log("returning toggles!");
-        $('input[type="checkbox" data-status="true"]').attr("checked", "checked");
-    } else if (dataStatusKey === "false") {
-        console.log("returning nada :( )");
-        $('input[type="checkbox" data-status="false"]').attr("checked", "null");
-    }
-});
- */
 
 // *** inspirational quotes api call ***
 $.ajax({
@@ -121,6 +82,5 @@ $.ajax({
     $("#quotesApiQ").text(quote);
     $("#quotesApiA").text(author);  
 }); 
-
 
 
