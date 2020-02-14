@@ -1,4 +1,4 @@
-import { DataTypes } from "sequelize/types";
+// import { DataTypes } from "sequelize/types";
 
 console.log("#loveyoself")
 
