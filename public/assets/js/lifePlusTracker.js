@@ -35,14 +35,20 @@ $.ajax({
     // console.log(quotesDataRaw);
     const quotesDataParsed = JSON.parse(quotesDataRaw);
     console.log(quotesDataParsed);
-    const quote = quotesDataParsed[0].array[1].text;
+    console.log(quotesDataParsed[5]);
+
+    const quote = quotesDataParsed[5].text;
     console.log(quote);
-    //const author = quotesDataParsed[index].author;
-    //$("#quotesAPI").text(quote + author);
+    const author = quotesDataParsed[5].author;
+    $("#quotesAPI").text(quote + author);
 }); 
 
 // submit button click functions 
-// daily tracker progress bar
+
 $("#dailySubmitBtn").click(function() {
+    // daily tracker progress bar
     $("#dailyTrackerBar").attr
+    
+    // water tracker bar
+    $("#waterTrackerBar").attr()
 })

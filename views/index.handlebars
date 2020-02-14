@@ -18,7 +18,7 @@
                 <!-- user stats -->
                 <div id="stats">
                          <!-- daily progress bar (NOT lil humxn state change): on.click state change-->
-                        <h5>Today's progress:</h5>
+                        <h5>Today's Progress:</h5>
                         <div id= "activitystats" class="progress" style="height: 50px;">
                             <!-- change the width by increments of 20% -->
                             <div class="progress-bar bg-warning" id="dailyTrackerBar" role="progressbar" style="width: 80%" 
@@ -28,15 +28,13 @@
                         <br>
 
                         <!-- water progress bar on.click state change --> 
-                        <h5>Today's water intake:</h5>
+                        <h5>Today's Water Intake:</h5>
                         <div id="waterstats">
                             <div class="progress" style="height: 50px;">
-                                <div class="progress-bar" id="waterTrackerBar" role="progressbar" style="width: 100%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><h3>## ounces</h3></div>
+                                <div class="progress-bar" id="waterTrackerBar" role="progressbar" style="width: {{dataObj.howMuch.val}}%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><h3>## ounces</h3></div>
                             </div>
                         </div>
-                    <div class="col-12" id="quotesAPI"> <!-- inspirational quotes API call -->
-                        API quote
-                    </div>    
+                        
                 </div> <!-- stats -->
                 
             </div> <!-- leftside -->
@@ -50,7 +48,7 @@
                     <div class="col-8">Drink water?</div>
                     <div class="col-4">
                         <label class="switch">
-                        <input type="checkbox" {{ Intakes.water }}>
+                        <input type="checkbox" data-state="{{dataObj.water}}">
                         <span class="slider"></span>
                         </label>
                     </div>
@@ -94,10 +92,15 @@
                         </label>
                     </div>
                 </div>
-                
-                <div class="row submitbutton justify-content-center"> <!--submit button-->
+                <!--submit button-->
+                <div class="row submitbutton justify-content-center"> 
                     <input class="btn btn-success" id="dailySubmitBtn" type="submit" value="Submit">
                 </div>
+                <!-- inspirational quotes API call -->
+                <div class="col-12"> 
+                        <h5>Today's Inspiration:</h5>
+                        <h3 id="quotesAPI"></h3>
+                    </div>
 
                 
             </div> <!-- rightside -->
