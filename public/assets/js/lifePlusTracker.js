@@ -7,6 +7,13 @@ const date = moment().format("MMMM Do YYYY");
 $("#todayDate").text(date);
 
 // toggle button boolean attribute change
+function toggleChange() {
+    if ("#data-status" === 1) {
+        $.attr("checked", "checked");
+    }
+};
+toggleChange();
+
 
 // loop through row data 
     // for keys where val=1 .val(1)
@@ -44,11 +51,10 @@ $.ajax({
 }); 
 
 // submit button click functions 
-
 $("#dailySubmitBtn").click(function() {
     // daily tracker progress bar
-    $("#dailyTrackerBar").attr
-    
+    $("#dailyTrackerBar").attr("style", )
+
     // water tracker bar
-    $("#waterTrackerBar").attr()
+    $("#waterTrackerBar").attr("style", )
 })
