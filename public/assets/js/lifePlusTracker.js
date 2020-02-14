@@ -1,4 +1,4 @@
-// import { DataTypes } from "sequelize/types";
+import { DataTypes } from "sequelize/types";
 
 console.log("#loveyoself")
 
@@ -8,9 +8,10 @@ $("#todayDate").text(date);
 
 // toggle button boolean attribute change
 function toggleChange() {
-    for (let index = 0; index < dataObj.length; index++) {
-        
-        
+    for (let i = 0; i < dataObj.length; index++) {
+        if ([i] === "true") {
+            $.setAttribute("checked", "checked");   
+        } 
     }
 
     /* if ("#data-status" === "true") {
