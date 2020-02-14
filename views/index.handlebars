@@ -1,0 +1,114 @@
+  <body>
+    <div class="header">
+        <h1>Life+</h1>
+        <h6>A self-care tracker</h6>
+    </div>
+    <div class="container col-12">
+        <div class="row">
+            <div id="leftside" class="col">
+                <div id="leftheader" class="row">
+                    <div id="plscenter">
+                        <h2 id="todayDate">TODAY'S DATE</h2>
+                    </div>
+                </div>
+                <!-- user avatar -->
+                <div id="healthboi"> 
+                    <img src="/assets/images/healthboi.png" alt="HEALTHBOI">
+                </div>
+                <!-- user stats -->
+                <div id="stats">
+                         <!-- daily progress bar (NOT lil humxn state change): on.click state change-->
+                        <h5>Today's Progress:</h5>
+                        <div id= "activitystats" class="progress" style="height: 50px;">
+                            <!-- change the width by increments of 20% -->
+                            <div class="progress-bar bg-warning" id="dailyTrackerBar" role="progressbar" style="width: 80%" 
+                            aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+
+                        <br>
+
+                        <!-- water progress bar on.click state change --> 
+                        <h5>Today's Water Intake:</h5>
+                        <div id="waterstats">
+                            <div class="progress" style="height: 50px;">
+                                <div class="progress-bar" id="waterTrackerBar" role="progressbar" style="width: 100%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><h3>{{ dataObj.waterAmount }} ounces</h3></div>
+                            </div>
+                        </div>
+                        
+                </div> <!-- stats -->
+                
+            </div> <!-- leftside -->
+            <div id="rightside" class="col">
+                <div id="rightheader" class="row">
+                    <div id="plscenter">
+                        <h2>Today, did you...</h2>
+                    </div>
+                </div>
+                <div class="row" id="rightcontent">
+                    <!-- water -->
+                    <div class="col-8">drink water?</div>
+                    <div class="col-4">
+                        <label class="switch">
+                        <input type="checkbox" data-status="{{dataObj.water}}">
+                        <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!-- howMuch -->
+                    <div class="col-8">how many ounces?</div>
+                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <input type="text" id="waterInput" style="width: 100%;">
+                    </div>
+                    <!-- food -->
+                    <div class="col-8">eat enough food?</div>
+                    <div class="col-4">
+                        <label class="switch">
+                        <input type="checkbox" data-status="{{dataObj.food}}">
+                        <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!-- goal -->
+                    <div class="col-8">accomplish a goal?</div>
+                    <div class="col-4">
+                        <label class="switch">
+                        <input type="checkbox" data-status="{{dataObj.goal}}">
+                        <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!-- meditation -->
+                    <div class="col-8">take a moment for yourself?</div>
+                    <div class="col-4">
+                        <label class="switch">
+                        <input type="checkbox" data-status="{{dataObj.meditation}}">
+                        <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!-- pills -->
+                    <div class="col-8">take your vitamins or medication?</div>
+                    <div class="col-4">
+                        <label class="switch">
+                        <input type="checkbox" data-status="{{dataObj.pills}}">
+                        <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!-- interaction -->
+                    <div class="col-8">interact with friends?</div>
+                    <div class="col-4">
+                        <label class="switch">
+                        <input type="checkbox" data-status="{{dataObj.interaction}}">
+                        <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <!--submit button-->
+                <div class="row submitbutton justify-content-center"> 
+                    <input class="btn btn-success" id="dailySubmitBtn" type="submit" value="Submit">
+                </div>
+                <!-- inspirational quotes API call -->
+                <div class="col-12"> 
+                        <h5>Today's Inspiration:</h5>
+                        <h3 id="quotesAPI"></h3>
+                    </div>
+                    
+            </div> <!-- rightside -->
+        </div> <!-- <div class="row"> -->
+    </div> <!-- <div class="container col-12"> -->

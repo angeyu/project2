@@ -1,0 +1,33 @@
+{
+  "name": "weekly-meal-planner-project-2",
+  "version": "1.0.0",
+  "description": "Meal planner app that allows users to track meals per day and plan accordingly",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angeyu/project2.git"
+  },
+  "author": "Ange Yu, Kobii Hoyos-Watkins, Liz Alexander, Sarah Dillard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angeyu/project2/issues"
+  },
+  "homepage": "https://github.com/angeyu/project2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "is-vegan": "^1.1.5",
+    "moment": "^2.24.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^5.5.1"
+  }
+}

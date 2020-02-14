@@ -1,0 +1,115 @@
+<body>
+    <div class="container">
+        <!-- header -->
+        <div class="header row" style="height: 70px; background-color: bisque">
+            <h1 class="mx-auto" style="text-align: center; padding-top: 20px;">Life +</h1>
+        </div>
+        <div class="header row" style="background-color: bisque">
+            <h6 class = "mx-auto" style="text-align: center;">Daily self-care tracker</h6>
+        </div>
+        <!-- user avatar viewer -->
+        <div class="content row bg-info" style="height: 600px; padding: 30px;">
+            <div class="col" style="background-color: powderblue;">
+                <div class="row align-items-start">
+                    <div class="col" style="background-color: salmon; text-align: center;">
+                      <h1 class="mx-auto">{ today's date }</h1> <!-- moment.js date --> 
+                    </div>
+                </div>
+                <div class="character mx-auto" style="align-content: center;"> <!-- user avatar character image -->
+                    <img src="https://st2.depositphotos.com/3687485/10505/v/950/depositphotos_105052354-stock-illustration-healthy-built-strong-sport-man.jpg" class="img-fluid" alt="Responsive image" style="max-height: 300px;">
+                </div>
+                <div class="row align-items-end" style="position: absolute; bottom:0; width: 100%;">
+                    <div class="col" style="background-color: rosybrown;">
+                        
+                    </div>
+                </div>    
+            </div>
+            
+            <!-- switchboard UI -->
+            <div class="col-sm" style="background-color: peachpuff;">
+                <div class="row"> 
+                    <div class="jumbotron">
+                          <h1 class="display-4" id="todayDate"></h1>
+                          <h2 class="lead">today, did you...</h2>
+                      </div>
+                </div>
+                <div class="row"> 
+                </div>
+                <div class="row"> <!--water switch-->
+                    <div class="col-sm-8"> 
+                        <h4>drink water?</h4> <!--action-->
+                    </div>
+                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <input type="checkbox" data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                    </div>
+                </div>
+                <div class="row"> <!--water value-->
+                    <div class="col-sm-8"> 
+                        <h4>how much?</h4> <!--action-->
+                    </div>
+                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                    </div>
+                </div>
+                <div class="row"> <!--eat switch-->
+                    <div class="col-sm-8"> 
+                        <h4>eat enough food?</h4> <!--action-->
+                    </div>
+                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                    </div>
+                </div>
+                <div class="row"> <!--move switch-->
+                    <div class="col-sm-8"> 
+                        <h4>move your body?</h4> <!--action-->
+                    </div>
+                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info" >
+                    </div>
+                </div>
+                <div class="row"> <!--take a moment switch-->
+                    <div class="col-sm-8"> 
+                        <h4>take a moment for yourself?</h4> <!--action-->
+                    </div>
+                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                    </div>
+                </div>
+                <div class="row"> <!-- medication switch * -->
+                    <div class="col-sm-8"> 
+                        <div class="row">
+                            <h4>take your medication or vitamins?</h4> <!--action-->
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-light" data-toggle="button" aria-pressed="false">i don't take either</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                    </div>
+                </div>
+                <div class="row"> <!--interact with friends-->
+                    <div class="col-sm-8"> 
+                        <h4>interact with friends?</h4> <!--action-->
+                    </div>
+                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <input type="checkbox" checked data-toggle="toggle" data-on="no" data-off="yes!" data-onstyle="warning" data-offstyle="info">
+                    </div>
+                </div>
+                <div class="row"> <!--submit button-->
+                    <input class="btn btn-primary" id="dailySubmitBtn" type="submit" value="Submit">
+                </div>
+                <!--add toast alert affirmation. affirmation api?-->
+            </div>    
+
+    </div>
+
+    <!-- bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- bootstrap toggle script -->
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+</body>
