@@ -10,7 +10,8 @@ $("#todayDate").text(date);
 function toggleChange() {
     for (let i = 0; i < dataObj.length; index++) {
         if ([i] === "true") {
-            $.setAttribute("checked", "checked");   
+            
+            $().setAttribute("checked", "checked");   
         } 
     }
 
