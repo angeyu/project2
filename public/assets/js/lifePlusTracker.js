@@ -8,9 +8,14 @@ $("#todayDate").text(date);
 
 // toggle button boolean attribute change
 function toggleChange() {
-    if ("#data-status" === "true") {
-        $.setAttribute("checked", "checked");
+    for (let index = 0; index < dataObj.length; index++) {
+        
+        
     }
+
+    /* if ("#data-status" === "true") {
+        $.setAttribute("checked", "checked");
+    } */
 };
 toggleChange();
 
