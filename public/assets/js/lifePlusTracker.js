@@ -7,31 +7,50 @@ console.log("#loveyoself")
 const date = moment().format("MMMM Do YYYY");
 $("#todayDate").text(date);
 
+// return all userInput vals to array
+const buttonValueArray = document.querySelectorAll("userInput");
+console.log(buttonValueArray);
+
+// *** click event getting user input values from buttons ***
+// on button click function -- called in html attribute
+const userInputBtn = document.getElementsByClassName("toggleStateBtn");
+console.log(userInputBtn);
+ 
+ function clickedYes() {
+    //$('input[type="checkbox]').setAttribute("checked", "checked");
+    console.log("clickedYes() attr added successfully!")
+}; 
+
+/* // add checked attribute
+$(".userInput").click(function() {
+    console.log("hello button click!")
+    const clickedYesID = $(".userInput").getAttribute("id");
+    console.log(clickedYesID);
+    // $('input[type="checkbox]').attr("checked", "checked");
+}); */
+
 // *** return user input values and push to array as key/value pairs ***
-const buttonValueArray = document.querySelectorAll(".userInput");
-// console.log(buttonValueArray);
-const buttonAPIData = {};
+
+const apiPutArray = {};
 for (let index = 0; index < buttonValueArray.length; index++) {
     // get key data from button ids
     const btnKey = buttonValueArray[index].attributes.id.value
-    // console.log(btnKey);
+    console.log(btnKey);
     // get value data from button dataset
     const btnValue = buttonValueArray[index].dataset.status;
-    // console.log(btnValue);
-    // create key value pair
-    const btnKeyValue = btnKey + ": " + btnValue;
-    // push key value pair to array
-    Object.assign(buttonAPIData,btnKeyValue);  
+    console.log(btnValue);
+    // create new key value pair in apiPutArray with btn vals
+    apiPutArray["'" + btnKey + "'"] = "'" + btnValue + "'"
 }
-// check it
-console.log(buttonAPIData);
+// check it!
+console.log(apiPutArray);
 
 // *** submit button PUT click event ***  
 $("#dailySubmitBtn").click(function() {
     // set var for today's date in SQL table format
     let todayDatePUTReq = moment().format('YYYY-MM-DD');
     // create object to PUT update
-    const apiPutArray = {
+    /* const apiPutArray = {
         water: true,
         waterAmount: 100,
         meditation: true,
@@ -39,19 +58,19 @@ $("#dailySubmitBtn").click(function() {
         interaction: true,
         goal: true,
         food: true
-    }
+    } */
 
-    const apiPutData = Object.assign(apiPutArray, buttonAPIData);
+    const apiPutData = Object.assign(apiPutArray, apiPutArray);
     console.log(apiPutData);
 /*   
-// apiPutData[index] === buttonAPIData[index]
+// apiPutData[index] === apiPutArray[index]
     for (let index = 0; index < apiPutData.length; index++) {
         console.log("hi! are you here?");
         console.log(apiPutData[index].keys);
-        console.log(buttonAPIData[index].keys);
+        console.log(apiPutArray[index].keys);
 
-        if (apiPutData[index].keys === buttonAPIData[index].keys) {
-            console.log(buttonAPIData[index].value);
+        if (apiPutData[index].keys === apiPutArray[index].keys) {
+            console.log(apiPutArray[index].value);
         }
     };
 */    
