@@ -1,56 +1,38 @@
 // import { DataTypes } from "sequelize/types";
 
+// *** js connection check ***
 console.log("#loveyoself")
 
-// todayDate
+// *** moment.js todayDate to return to page ***
 const date = moment().format("MMMM Do YYYY");
 $("#todayDate").text(date);
 
- 
-// toggle button boolean attribute change
-function toggleChange() {
-    const buttonsArray = document.querySelectorAll(".toggleState");
-    console.log(buttonsArray);
-    for (let i = 0; i < buttonsArray.length; i++) {
-        const dataStatusVal = buttonsArray[i].dataset.status;
-        console.log(dataStatusVal);
-        // console.log("data-status");
-        // if ("data-status" === "true") {
-            // console.log("true!");
-        // }
-    }; 
-};
-toggleChange();
+// *** return user input values and push to array as key/value pairs ***
+const buttonValueArray = document.querySelectorAll(".userInput");
+console.log(buttonValueArray);
+const buttonData = [];
+for (let index = 0; index < buttonValueArray.length; index++) {
+    // get key data from button ids
+    const btnKey = buttonValueArray[index].attributes.id.value
+    console.log(btnKey);
+    // get value data from button dataset
+    const btnValue = buttonValueArray[index].dataset.status;
+    console.log(btnValue);
+    // create key value pair
+    const btnKeyValue = btnKey + ": " + btnValue;
+    // push key value pair to array
+    buttonData.push(btnKeyValue);  
+}
+    // check it
+    console.log(buttonData);
 
-// inspirational quotes api call
-$.ajax({
-    url: "https://type.fit/api/quotes",
-    method: "GET"
-}).then(function(quotesDataRaw) {
-    // console.log(quotesDataRaw);
-    const quotesDataParsed = JSON.parse(quotesDataRaw);
-    // console.log(quotesDataParsed);
-    // console.log(quotesDataParsed[5]);
-    const quote = quotesDataParsed[5].text;
-    console.log(quote);
-    const author = quotesDataParsed[5].author;
-    $("#quotesAPI").text(quote + author);
-}); 
-
-// submit button click functions 
+// *** submit button PUT click event ***  
 $("#dailySubmitBtn").click(function() {
-    // daily tracker progress bar
-    // $("#dailyTrackerBar").attr("style", )
-
-    // water tracker bar
-    // $("#waterTrackerBar").attr("style", )
-    // $("#waterTrackerBar").attr()
-    //set var for today's date
-    let todaysDate = moment().format('YYYY-MM-DD');
+    // set var for today's date in SQL table format
+    let todayDatePUTReq = moment().format('YYYY-MM-DD');
 
     //***********PLEASE UPDATE ************/
-    //update the VALUES below so that they collect the value when the toggle button changes state (true/false/amount)
-
+ 
     let updateData = {
         water: true,
         waterAmount: 100,
@@ -61,7 +43,7 @@ $("#dailySubmitBtn").click(function() {
         food: true
     }
 
-    $.ajax("/api/progress/" + todaysDate, {
+    $.ajax("/api/progress/" + todayDatePUTReq, {
         type: "PUT",
         data: updateData
 
@@ -71,10 +53,43 @@ $("#dailySubmitBtn").click(function() {
 
     })
 
-    // to update the progress bar in percentages
-    // let count = 0;
-    // const toggleVal = 6;
-    // let progressVal = count / toggleVal;
+});    
 
+
+// *** toggle button boolean attribute change ***
+// ---- buttons array for loop 
+const buttonStateArray = document.querySelectorAll(".toggleStateBtn");
+buttonStateArray.forEach(function(index) {
+    console.log(index);
+
+    const dataStatusKey = index.getAttribute("data-status");
+    console.log(dataStatusKey);
+
+    if (dataStatusKey === "true") {
+        console.log("returning toggles!");
+        $('input[type="checkbox" data-status="true"]').attr("checked", "checked");
+    } else if (dataStatusKey === "false") {
+        console.log("returning nada :( )");
+        $('input[type="checkbox" data-status="false"]').attr("checked", "null");
+    }
 });
+
+// *** inspirational quotes api call ***
+$.ajax({
+    url: "https://type.fit/api/quotes",
+    method: "GET"
+}).then(function(quotesDataRaw) {
+    // console.log(quotesDataRaw);
+    const quotesDataParsed = JSON.parse(quotesDataRaw);
+    // console.log(quotesDataParsed);
+    const randomIndex = Math.floor(Math.random() * 101)
+    console.log(randomIndex);
+    // console.log(quotesDataParsed[randomIndex]);
+    const quote = quotesDataParsed[randomIndex].text;
+    console.log(quote);
+    const author = quotesDataParsed[randomIndex].author;
+    $("#quotesAPI").text(quote + author);
+}); 
+
+
 

@@ -45,62 +45,40 @@
                     </div>
                 </div>
                 <div class="row" id="rightcontent">
-                    
                     <!-- water -->
                     <div class="col-8">drink water?</div>
                     <div class="col-4">
-                        <input type="checkbox" data-toggle="toggle" class="toggleState" data-status="{{dataObj.water}}">
+                        <input type="checkbox" data-toggle="toggle" class="userInput toggleStateBtn" data-status="true" id="water">
                     </div>
-
-
-                    
                     <!-- howMuch -->
                     <div class="col-8">how many ounces?</div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="text" id="waterInput" style="width: 100%;">
+                        <input type="text" class="userInput" id="waterAmount" style="width: 100%;">
                     </div>
-                    
-                    
-                    
                     <!-- food -->
                     <div class="col-8">eat enough food?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" class="toggleState" data-status="{{dataObj.food}}">
-                        <span class="slider"></span>
-                        </label>
+                        <input type="checkbox" data-toggle="toggle" class="userInput toggleStateBtn" data-status="{{dataObj.food}}" id="food">
                     </div>
                     <!-- goal -->
                     <div class="col-8">accomplish a goal?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" class="toggleState" data-status="{{dataObj.goal}}">
-                        <span class="slider"></span>
-                        </label>
+                        <input type="checkbox" data-toggle="toggle" class="userInput toggleStateBtn" data-status="{{dataObj.goal}}" id="goal">
                     </div>
                     <!-- meditation -->
                     <div class="col-8">take a moment for yourself?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" class="toggleState" data-status="{{dataObj.meditation}}">
-                        <span class="slider"></span>
-                        </label>
+                        <input type="checkbox" data-toggle="toggle" class="userInput toggleStateBtn" data-status="{{dataObj.meditation}}" id="meditation">
                     </div>
                     <!-- pills -->
                     <div class="col-8">take your vitamins or medication?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" class="toggleState" data-status="{{dataObj.pills}}">
-                        <span class="slider"></span>
-                        </label>
+                        <input type="checkbox" data-toggle="toggle" class="userInput toggleStateBtn" data-status="{{dataObj.pills}}" id="pills">
                     </div>
                     <!-- interaction -->
                     <div class="col-8">interact with friends?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" class="toggleState" data-status="{{dataObj.interaction}}">
-                        <span class="slider"></span>
-                        </label>
+                        <input type="checkbox" data-toggle="toggle" class="userInput toggleStateBtn" data-status="{{dataObj.interaction}}" id="interaction">
                     </div>
                 </div>
                 <!--submit button-->
