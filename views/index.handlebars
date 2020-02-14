@@ -45,49 +45,56 @@
                     </div>
                 </div>
                 <div class="row" id="rightcontent">
-                    <div class="col-8">Drink water?</div>
+                    <!-- water -->
+                    <div class="col-8">drink water?</div>
                     <div class="col-4">
                         <label class="switch">
                         <input type="checkbox" data-status="{{dataObj.water}}">
                         <span class="slider"></span>
                         </label>
                     </div>
-                    <div class="col-8">How many ounces?</div>
+                    <!-- howMuch -->
+                    <div class="col-8">how many ounces?</div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="text" style="width: 100%;">
+                        <input type="text" id="waterInput" style="width: 100%;">
                     </div>
-                    <div class="col-8">Eat enough food?</div>
+                    <!-- food -->
+                    <div class="col-8">eat enough food?</div>
                     <div class="col-4">
                         <label class="switch">
-                        <input type="checkbox" data-status="{{ dataObj.eaten }}">
+                        <input type="checkbox" data-status="{{dataObj.food}}">
                         <span class="slider"></span>
                         </label>
                     </div>
-                    <div class="col-8">Moved around?</div>
+                    <!-- goal -->
+                    <div class="col-8">accomplish a goal?</div>
                     <div class="col-4">
                         <label class="switch">
-                        <input type="checkbox" data-status="{{ dataObj.goal }}">
+                        <input type="checkbox" data-status="{{dataObj.goal}}">
                         <span class="slider"></span>
                         </label>
                     </div>
-                    <div class="col-8">Take a moment for yourself?</div>
+                    <!-- meditation -->
+                    <div class="col-8">take a moment for yourself?</div>
                     <div class="col-4">
                         <label class="switch">
-                        <input type="checkbox" data-status="{{ dataObj.meditate }}">
+                        <input type="checkbox" data-status="{{dataObj.meditation}}">
                         <span class="slider"></span>
                         </label>
                     </div>
-                    <div class="col-8">Take your vitamins?</div>
+                    <!-- pills -->
+                    <div class="col-8">take your vitamins or medication?</div>
                     <div class="col-4">
                         <label class="switch">
-                        <input type="checkbox" data-status="{{ dataObj.pills }}">
+                        <input type="checkbox" data-status="{{dataObj.pills}}">
                         <span class="slider"></span>
                         </label>
                     </div>
-                    <div class="col-8">See your friends?</div>
+                    <!-- interaction -->
+                    <div class="col-8">interact with friends?</div>
                     <div class="col-4">
                         <label class="switch">
-                        <input type="checkbox" data-status="{{ dataObj.interaction }}">
+                        <input type="checkbox" data-status="{{dataObj.interaction}}">
                         <span class="slider"></span>
                         </label>
                     </div>
@@ -101,8 +108,7 @@
                         <h5>Today's Inspiration:</h5>
                         <h3 id="quotesAPI"></h3>
                     </div>
-
-                
+                    
             </div> <!-- rightside -->
         </div> <!-- <div class="row"> -->
     </div> <!-- <div class="container col-12"> -->
