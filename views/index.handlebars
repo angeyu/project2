@@ -45,19 +45,23 @@
                     </div>
                 </div>
                 <div class="row" id="rightcontent">
+                    
                     <!-- water -->
                     <div class="col-8">drink water?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" class="toggleState" data-status="{{dataObj.water}}">
-                        <span class="slider"></span>
-                        </label>
+                        <input type="checkbox" data-toggle="toggle" class="toggleState" data-status="{{dataObj.water}}">
                     </div>
+
+
+                    
                     <!-- howMuch -->
                     <div class="col-8">how many ounces?</div>
                     <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
                         <input type="text" id="waterInput" style="width: 100%;">
                     </div>
+                    
+                    
+                    
                     <!-- food -->
                     <div class="col-8">eat enough food?</div>
                     <div class="col-4">

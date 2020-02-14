@@ -6,21 +6,17 @@ console.log("#loveyoself")
 const date = moment().format("MMMM Do YYYY");
 $("#todayDate").text(date);
 
+ 
 // toggle button boolean attribute change
 function toggleChange() {
-    const buttons = document.querySelector(".toggleState");
-    console.log(buttons);
-
-
-    for (let i = 0; i < dataObj.length; index++) {
-        if ([i] === "true") {
-            $.setAttribute("checked", "checked");   
-        } 
-    }
-
-    /* if ("#data-status" === "true") {
-        $.setAttribute("checked", "checked");
-    } */
+    const buttonsArray = document.querySelectorAll(".toggleState");
+    console.log(buttonsArray);
+    /* for (let i = 0; i < buttonsArray.length; i++) {
+        const dataStatusVal = 
+        console.log("data-status");
+        if ("data-status" === "true") {
+            console.log("true!");
+        }}; */
 };
 toggleChange();
 
@@ -31,9 +27,8 @@ $.ajax({
 }).then(function(quotesDataRaw) {
     // console.log(quotesDataRaw);
     const quotesDataParsed = JSON.parse(quotesDataRaw);
-    console.log(quotesDataParsed);
-    console.log(quotesDataParsed[5]);
-
+    // console.log(quotesDataParsed);
+    // console.log(quotesDataParsed[5]);
     const quote = quotesDataParsed[5].text;
     console.log(quote);
     const author = quotesDataParsed[5].author;
@@ -79,5 +74,4 @@ $("#dailySubmitBtn").click(function() {
     // let progressVal = count / toggleVal;
 
 });
-    
 
