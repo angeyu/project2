@@ -53,8 +53,37 @@ $.ajax({
 // submit button click functions 
 $("#dailySubmitBtn").click(function() {
     // daily tracker progress bar
-    $("#dailyTrackerBar").attr("style", )
+    // $("#dailyTrackerBar").attr("style", )
 
     // water tracker bar
-    $("#waterTrackerBar").attr("style", )
-})
+    // $("#waterTrackerBar").attr("style", )
+
+    //set var for today's date
+    let todaysDate = moment().format('YYYY-MM-DD');
+
+    let updateData = {
+        water: true,
+        waterAmount: 100,
+        meditation: true,
+        pills: true,
+        interaction: true,
+        goal: true,
+        food: true
+    }
+
+    $.ajax("/api/progress/" + todaysDate, {
+        type: "PUT",
+        data: updateData
+
+    }).then(function() {
+
+        console.log("done");
+
+    })
+
+    // to update the progress bar in percentages
+    // let count = 0;
+    // const toggleVal = 6;
+    // let progressVal = count / toggleVal;
+
+});

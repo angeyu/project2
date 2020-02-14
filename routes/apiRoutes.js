@@ -35,11 +35,12 @@ module.exports = function(app) {
 
 
 
-    //execute put to update existing record with new data in db
-    app.put("/api/progress", function(req, res) {
+    //execute put to update existing record with new data in db based on today's date
+    app.put("/api/progress/:todaysDate", function(req, res) {
 
-        //set var for today's date
-        let todaysDate = moment().format('YYYY-MM-DD');
+        //set var for today's date returned from the put request
+        let todaysDate = req.params.todaysDate;
+        
 
         //use the data sent from the browser (req.body) to update the specific row...
         db.Intake.update(req.body,
