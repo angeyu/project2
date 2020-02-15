@@ -1,5 +1,7 @@
 # Group 2 - life+
 
+![life plus self care tracker](public/assets/images/lifeplustracker.jpg)
+
 ## Installation
 
 ### Front End
@@ -13,7 +15,8 @@
 * Express.js
 * Handlebars
 * Heroku with JawsDB
-* npm dotev
+* Sequelize
+* npm dotenv
 
 ## Usage
 
