@@ -46,26 +46,27 @@
                 </div>
                 <div class="row" id="rightcontent">
                     <!-- water -->
-                    <div class="col-8">drink water?</div>
-                    <div class="col-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary">
+                    <div class="col-8" style="margin-top: 20px;">drink water?</div>
+                    <div class="col-4" style="margin-top: 20px;"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
                                 <input type="checkbox" class="userInput toggleStateBtn" id="water" data-status="{{dataObj.water}}" >
                             </label>
                         </div>
                     </div>
 
-                    <!-- waterAmount-->
+                    <!-- waterAmount -->
                     <div class="col-8">how many ounces?</div>
                     <div class="col-sm-4">
-                        <input type="text" class="userInput" id="waterAmount" style="width: 100%;">
+                         
+                        <input type="text" class="userInput" id="waterAmount" style="width: 100%;" onchange="waterAmount()">
                     </div>
 
                     <!-- food -->
-                    <div class="col-8">eat enough food?</div>
-                    <div class="col-4">
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary">
+                    <div class="col-8" style="margin-top: 8px;">eat enough food?</div>
+                    <div class="col-4" style="margin-top: 8px;">
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
                                 <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.food}}" id="food">
                             </label>
                         </div>
@@ -77,7 +78,7 @@
                     <div class="col-8">accomplish a goal?</div>
                     <div class="col-4">
                         <div class="btn-group-toggle switch" data-toggle="buttons">
-                            <label class="btn btn-secondary slider">
+                            <label class="btn btn-secondary slider round">
                                 <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.goal}}" id="goal">
                             </label>
                         </div>
@@ -88,8 +89,8 @@
                     <!-- meditation -->
                     <div class="col-8">take a moment for yourself?</div>
                     <div class="col-4">
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary">
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
                                 <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.meditation}}" id="meditation">
                             </label>
                         </div>
@@ -100,8 +101,8 @@
                     <!-- pills -->
                     <div class="col-8">take your vitamins or medication?</div>
                     <div class="col-4">
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary" >
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round" >
                                 <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.pills}}" id="pills">
                             </label>
                         </div>
@@ -112,8 +113,8 @@
                     <!-- interaction -->
                     <div class="col-8">interact with friends?</div>
                     <div class="col-4">
-                        <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary">
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
                                 <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.interaction}}" id="interaction">
                             </label>
                         </div>
@@ -137,3 +138,13 @@
             </div> <!-- rightside -->
         </div> <!-- <div class="row"> -->
     </div> <!-- <div class="container col-12"> -->
+
+    {{!-- <script>
+    $(document).ready(function() {
+        function clickedYes() {
+        $("#label").attr("class", "active");
+        console.log("clickedYes() attr added successfully!");
+        };
+    
+    });    
+    </script> --}}

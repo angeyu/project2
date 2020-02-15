@@ -41,7 +41,7 @@ body {
 }
 
 #rightcontent {
-  margin: 10px 30px;
+  margin: 15px 30px;
   font-size: 20px;
   background-color: #EDEEC9;
   outline: 2px dashed #3E606F;
@@ -141,17 +141,17 @@ outline: 2px dashed #3E606F;
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #2196F3 !important;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #2196F3 !important;
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(26px) !important;
+    -ms-transform: translateX(26px) !important;
+    transform: translateX(26px) !important;
   }
   
   /* Rounded sliders */
