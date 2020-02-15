@@ -72,7 +72,28 @@ $.ajax({
     console.log(quote);
     const author = quotesDataParsed[randomIndex].author;
     $("#quotesApiQ").text(quote);
-    $("#quotesApiA").text(author);  
-}); 
+    $("#quotesApiA").text(author); 
+    
+    
+    //Progress Bar update//
+    //code below to update the progress bar in percentages
 
+    //set variable for total number of toggles
+    const toggleVal = 6;
+
+    //set variable for number of toggles that have been clicked (true)
+    let toggleCountNow = 0;
+
+    //run for each function to collect the true status of all toggles
+    $('.userInput[data-status=true]').each(function() {
+        toggleCountNow++;
+    })
+
+    //set var that will hold percentage
+    let todaysProgress = ((toggleCountNow / toggleVal) * 100) + "%";
+
+    //add percentage to progress bar div
+    $("#dailyTrackerBar").attr('style', 'width:' + todaysProgress)
+
+}); 
 
