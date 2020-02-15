@@ -94,7 +94,12 @@ $.ajax({
     //add percentage to progress bar div
     $("#dailyTrackerBar").attr('style', 'width:' + todaysProgress)
 
+// *** healthboi state change *** //
+// changes from img to gif at todaysProgress = 100%
+    const healthboiSuccessURL = "/assets/images/healthboi1gif.gif"
+    if (todaysProgress === "100%" ) {
+        console.log("sparkleboi!")
+        $("#sparkleboi").attr("src", healthboiSuccessURL)
+    };
 }); 
 
-// *** lil humxn state change *** //
-// changes from img to gif at todaysProgress = 100%
