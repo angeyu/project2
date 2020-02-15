@@ -21,9 +21,18 @@ let toggleCountNow = 0;
 //when page loads and database returns values, check datastatuses and mark as active
 function activeToggle() {
     $('label .userInput[data-status=true]').each(function(){
-        $(this).parent('label').addClass("focus active")
+        // $(this).parent('label').addClass("focus active")
+        $(this).attr("checked");
         console.log("done")
      }) 
+
+     $('label .userInput[data-status=false]').each(function(){
+        // $(this).parent('label').addClass("focus active")
+        $(this).removeAttr("checked");
+        console.log("done removed")
+     }) 
+
+
 }
 
 // *** click event function returning class .active to checked buttons" *** //
@@ -33,11 +42,11 @@ $('.btn-group-toggle').on('click', function () {
     //and if the label of the particular toggle that was clicked is 'active'
     if ($(this).find('label').hasClass('active')) {
         // set the activeBtnID to that input's ID
-        const activeBtnID = $(this).find('input').attr("id");
+        // const activeBtnID = $(this).find('input').attr("id");
         // console.log(activeBtnID);
-        $(this).find('input').attr("data-status", false);
+        $(this).find('input').attr("data-status", false).removeAttr("checked");
     } else {
-        $(this).find('input').attr("data-status", true);
+        $(this).find('input').attr("data-status", true).attr("checked");
     }
 });
 
