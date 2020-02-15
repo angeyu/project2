@@ -8,6 +8,8 @@ div {
 body {
   background-color: #91AAB4;
 }
+  
+
 .header {
   width: 100%;
   height: 90px;
@@ -117,7 +119,7 @@ outline: 2px dashed #3E606F;
   
   /* The slider */
   .slider {
-    position: absolute;
+    position: absolute;   
     cursor: pointer;
     top: 0;
     left: 0;
