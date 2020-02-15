@@ -5,7 +5,7 @@
 ### Front End
 * Bootstrap
 * Moment.js
-* [https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373 "Inspiring Quotes API"]
+* [Inspiring Quotes API](https://www.freecodecamp.org/forum/t/free-api-inspirational-quotes-json-with-code-examples/311373) 
 * graphic design by Angela Yu
 
 ### Back End
@@ -42,6 +42,6 @@
 ## License
 
 ## Working Documents
-* [https://project2project2.herokuapp.com/ "Heroku App"]
-* [https://docs.google.com/document/d/19MVd9TSsCysplNj4eTVMN0gpJKs0w6qPWRiYaUpvdls/edit "Project 2 Google Doc"]
-* [https://docs.google.com/presentation/d/13x5YQRu6OWdkEmewS_UT8PSrp50yULRq-K2wPbrzar4/edit?usp=sharing "Project 2 Presentation Slides"]
+* [Heroku App](https://project2project2.herokuapp.com/)
+* [Project 2 Google Doc](https://docs.google.com/document/d/19MVd9TSsCysplNj4eTVMN0gpJKs0w6qPWRiYaUpvdls/edit)
+* [Project 2 Presentation Slides](https://docs.google.com/presentation/d/13x5YQRu6OWdkEmewS_UT8PSrp50yULRq-K2wPbrzar4/edit?usp=sharing)
