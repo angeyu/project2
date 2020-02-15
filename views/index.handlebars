@@ -49,7 +49,7 @@
                     <div class="col-8">drink water?</div>
                     <div class="col-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
                         <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary"  onclick="clickedYes()">
+                            <label class="btn btn-secondary">
                                 <input type="checkbox" class="userInput toggleStateBtn" id="water" data-status="{{dataObj.water}}" >
                             </label>
                         </div>
@@ -58,16 +58,15 @@
                     <!-- waterAmount-->
                     <div class="col-8">how many ounces?</div>
                     <div class="col-sm-4">
-                        <input type="text" class="userInput" id="waterAmount" style="width: 100%;" onchange="waterAmount()">
+                        <input type="text" class="userInput" id="waterAmount" style="width: 100%;">
                     </div>
 
                     <!-- food -->
                     <div class="col-8">eat enough food?</div>
                     <div class="col-4">
                         <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary"  onclick="clickedYes();">
-                                <input type="checkbox" id="food" class="userInput toggleStateBtn" data-status="{{dataObj.food}}" >
-                                <span class="slider round"></span>
+                            <label class="btn btn-secondary">
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.food}}" id="food">
                             </label>
                         </div>
 
@@ -78,9 +77,8 @@
                     <div class="col-8">accomplish a goal?</div>
                     <div class="col-4">
                         <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary"  onclick="clickedYes();">
-                                <input type="checkbox" id="goal" class="userInput toggleStateBtn" data-status="{{dataObj.goal}}" >
-                                <span class="slider round"></span>
+                            <label class="btn btn-secondary">
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.goal}}" id="goal">
                             </label>
                         </div>
 
@@ -91,9 +89,8 @@
                     <div class="col-8">take a moment for yourself?</div>
                     <div class="col-4">
                         <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary"  onclick="clickedYes();">
-                                <input type="checkbox" id="meditation" class="userInput toggleStateBtn" data-status="{{dataObj.meditation}}" >
-                                <span class="slider round"></span>
+                            <label class="btn btn-secondary">
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.meditation}}" id="meditation">
                             </label>
                         </div>
 
@@ -104,9 +101,8 @@
                     <div class="col-8">take your vitamins or medication?</div>
                     <div class="col-4">
                         <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary"  onclick="clickedYes();">
-                                <input type="checkbox" id="pills" class="userInput toggleStateBtn" data-status="{{dataObj.pills}}">
-                                <span class="slider round"></span>
+                            <label class="btn btn-secondary" >
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.pills}}" id="pills">
                             </label>
                         </div>
 
@@ -117,9 +113,8 @@
                     <div class="col-8">interact with friends?</div>
                     <div class="col-4">
                         <div class="btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-secondary"  onclick="clickedYes();">
-                                <input type="checkbox" id="interaction" class="userInput toggleStateBtn" data-status="{{dataObj.interaction}}">
-                                <span class="slider round"></span>
+                            <label class="btn btn-secondary">
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.interaction}}" id="interaction">
                             </label>
                         </div>
 
