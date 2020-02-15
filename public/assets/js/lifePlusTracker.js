@@ -20,19 +20,23 @@ const apiPutArray = {
 
 // *** @ click event function returning class .active to checked buttons" ***
 function clickedYes() {
-    $("#label").attr("class", "active");
+    $('#label').attr("class", "active")
     console.log("clickedYes() attr added successfully!");
+
+    const activeBtnID = $('input').attr("id");
+    console.log(activeBtnID);
+
 }
 // this function is called in the html as an onclick attribute
 
 // *** @ function to return html data and create key value pairs of active state buttons and push them to api array ***
-function activeState() {
-    if ($("#label").hasClass("active")) {
-        const activeBtnID = $("#label").data("id");
-        console.log(activeBtnID);
-    }
-};
-activeState();
+// function activeState() {
+//     if ($("#label").hasClass("active")) {
+//         const activeBtnID = $("#label").data("id");
+//         console.log(activeBtnID);
+//     }
+// };
+// activeState();
 
 // *** @ return and store waterAmount:""; from html ***
 function waterAmount() {
