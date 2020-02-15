@@ -22,18 +22,20 @@ const apiPutObj = {
 function clickedYes() {
     $("#label").attr("class", "active");
     console.log("class .active successfully added!");
+    const activeBtnID = $('input').attr("id");
+    console.log("active button id = " + activeBtnID);
 }
 // this function is called in the html as an onclick attribute
 
 // *** @ function to return html data and create key value pairs of active state buttons and push them to api array ***
-function activeState() {
+/* function activeState() {
     if ($("#label").hasClass("active")) {
         const activeBtnID = $("#label").data("id");
         console.log("active button id = " + activeBtnID);
         apiPutObj["activeBtnID"] = "true";
     }; 
-};
-activeState();
+}; */
+// activeState();
 
 // *** @ return and store waterAmount:""; from html ***
 function waterAmount() {
@@ -41,7 +43,7 @@ function waterAmount() {
     console.log("water val = " + waterAmountVal);
     apiPutObj["waterAmount"] = waterAmountVal;
 };
-waterAmount();
+// waterAmount();
 
 // *** submit button PUT click event ***  
 $("#dailySubmitBtn").click(function() {
@@ -98,3 +100,14 @@ $.ajax({
 
 }); 
 
+/* $("#userInput").click(function() {
+    clickedYes()
+    .then(function(activeState()) {
+        return results;
+    console.log(results);
+    })
+}) */
+
+/* $("#waterAmount").change(function() {
+         waterAmount();
+     }) */
