@@ -1,5 +1,3 @@
-// import { DataTypes } from "sequelize/types";
-
 // *** js connection check *** //
 console.log("#loveyoself")
 
@@ -7,12 +5,12 @@ console.log("#loveyoself")
 const date = moment().format("MMMM Do YYYY");
 $("#todayDate").text(date);
 
-// create apiPutObj to use later
+// *** create apiPutObj to use later *** //
 const apiPutObj = {};
 // create waterAmountVal to store future water amount in array
 const waterAmountVal = "";
 
-// *** @ click event function returning class .active to checked buttons" *** //
+// *** click event function returning class .active to checked buttons" *** //
 // when any of the buttons with class .btn-group-toggle are clicked
 $('.btn-group-toggle').on('click', function () {
        // $(this).find('label').addClass('active');
@@ -27,7 +25,7 @@ $('.btn-group-toggle').on('click', function () {
     }
 });
 
-// *** @ return and store waterAmount:""; from html *** //
+// *** return and store waterAmount:""; from html *** //
 $("#waterAmount").on("change", function() {
     const waterAmountClick = $(this);
     console.log(waterAmountClick);
@@ -36,7 +34,7 @@ $("#waterAmount").on("change", function() {
     $(this).attr("waterAmount", waterAmountVal);
 });
 
-// *** submit button PUT click event *** //
+// *** submit button click event PUT functions *** //
 $("#dailySubmitBtn").click(function() {
 // set var for today's date in SQL table format
     let todayDatePUTReq = moment().format('YYYY-MM-DD');
@@ -61,7 +59,7 @@ $("#dailySubmitBtn").click(function() {
     })
 });    
 
-// *** inspirational quotes api call *** //
+// *** inspirational quotes third party api call *** //
 $.ajax({
     url: "https://type.fit/api/quotes",
     method: "GET"
@@ -69,7 +67,7 @@ $.ajax({
     // console.log(quotesDataRaw);
     const quotesDataParsed = JSON.parse(quotesDataRaw);
     // console.log(quotesDataParsed);
-    const randomIndex = Math.floor(Math.random() * 101)
+    const randomIndex = Math.floor(Math.random() * 1001)
     console.log(randomIndex);
     // console.log(quotesDataParsed[randomIndex]);
     const quote = quotesDataParsed[randomIndex].text;
@@ -78,8 +76,7 @@ $.ajax({
     $("#quotesApiQ").text(quote);
     $("#quotesApiA").text(author); 
     
-    
-// *** Progress Bar update *** //
+// *** Progress Bar Update *** //
 //code below to update the progress bar in percentages
     //set variable for total number of toggles
     const toggleVal = 6;
