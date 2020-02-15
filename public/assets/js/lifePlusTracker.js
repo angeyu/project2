@@ -7,8 +7,8 @@ console.log("#loveyoself")
 const date = moment().format("MMMM Do YYYY");
 $("#todayDate").text(date);
 
-// *** create api PUT request array before buttons ***
-const apiPutArray = {
+// *** create api PUT request array before returning button values ***
+const apiPutObj = {
     water: "",
     waterAmount: 0,
     meditation: "",
@@ -18,10 +18,10 @@ const apiPutArray = {
     food: ""
 };
 
-// *** @ click event function returning class .active to checked buttons" ***
+// *** click event function returning class .active to checked buttons" ***
 function clickedYes() {
     $("#label").attr("class", "active");
-    console.log("clickedYes() attr added successfully!");
+    console.log("class .active successfully added!");
 }
 // this function is called in the html as an onclick attribute
 
@@ -29,29 +29,30 @@ function clickedYes() {
 function activeState() {
     if ($("#label").hasClass("active")) {
         const activeBtnID = $("#label").data("id");
-        console.log(activeBtnID);
-    }
+        console.log("active button id = " + activeBtnID);
+        apiPutObj["activeBtnID"] = "true";
+    }; 
 };
 activeState();
 
 // *** @ return and store waterAmount:""; from html ***
 function waterAmount() {
     const waterAmountVal = $("#waterAmount").value;
-    console.log(waterAmountVal);
-    apiPutArray["waterAmount"] = waterAmountVal;
+    console.log("water val = " + waterAmountVal);
+    apiPutObj["waterAmount"] = waterAmountVal;
 };
 waterAmount();
 
 // *** submit button PUT click event ***  
 $("#dailySubmitBtn").click(function() {
-    // set var for today's date in SQL table format
+// set var for today's date in SQL table format
     let todayDatePUTReq = moment().format('YYYY-MM-DD');
-    
- 
+// check apiPutObj data
+    console.log(apiPutObj);
 // PUT api call returning userInput data to SQL table
     $.ajax("/api/progress/" + todayDatePUTReq, {
         type: "PUT",
-        data: apiPutArray
+        data: apiPutObj
     }).then(function() {
         console.log("data PUT successful!");
     })
