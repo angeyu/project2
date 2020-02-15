@@ -7,6 +7,8 @@ console.log("#loveyoself")
 const date = moment().format("MMMM Do YYYY");
 $("#todayDate").text(date);
 
+// create apiPutObj to use later
+const apiPutObj = {};
 // create waterAmountVal to store future water amount in array
 const waterAmountVal = "";
 
@@ -27,11 +29,12 @@ $('.btn-group-toggle').on('click', function () {
 
 // *** @ return and store waterAmount:""; from html *** //
 $("#waterAmount").on("change", function() {
-    const waterAmount = $(this);
-    console.log(waterAmount);
-    const waterAmountVal = waterAmount[0].value;
-    console.log(waterAmountVal)
-})
+    const waterAmountClick = $(this);
+    console.log(waterAmountClick);
+    const waterAmountVal = waterAmountClick[0].value;
+    console.log(waterAmountVal);
+    $(this).attr("waterAmount", waterAmountVal);
+});
 
 // *** submit button PUT click event *** //
 $("#dailySubmitBtn").click(function() {
@@ -40,15 +43,13 @@ $("#dailySubmitBtn").click(function() {
     // create api PUT request array
     const apiPutObj = {
         water: $("#water").attr('data-status'),
-        waterAmount: waterAmountVal ,
+        waterAmount: $("#waterAmount").attr("wateramount"),
         meditation: $("#meditation").attr('data-status'),
         pills: $("#pills").attr('data-status'),
         interaction: $("#interaction").attr('data-status'),
         goal: $("#goal").attr('data-status'),
         food: $("#food").attr('data-status')
     };
-        console.log(apiPutObj);
-
 // check apiPutObj data
     console.log(apiPutObj);
 // PUT api call returning userInput data to SQL table
