@@ -90,7 +90,7 @@ $.ajax({
         toggleCountNow++;
     })
     //set var that will hold percentage
-    let todaysProgress = ((toggleCountNow / toggleVal) * 100) + "%";
+    const todaysProgress = ((toggleCountNow / toggleVal) * 100) + "%";
     //add percentage to progress bar div
     $("#dailyTrackerBar").attr('style', 'width:' + todaysProgress)
 
