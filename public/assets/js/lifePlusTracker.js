@@ -54,12 +54,12 @@ $('.btn-group-toggle').on('click', function () {
 // activeState();
 
 // *** @ return and store waterAmount:""; from html ***
-// function waterAmount() {
-//     const waterAmountVal = $("#waterAmount").value;
-//     console.log(waterAmountVal);
-//     apiPutArray["waterAmount"] = waterAmountVal;
-// };
-// waterAmount();
+function waterAmount() {
+    const waterAmountVal = $("#waterAmount").value;
+    console.log(waterAmountVal);
+    apiPutArray["waterAmount"] = waterAmountVal;
+};
+waterAmount();
 
 // *** submit button PUT click event ***  
 $("#dailySubmitBtn").click(function() {
