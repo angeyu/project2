@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         waterAmount: {
             type: DataTypes.INTEGER,
-            defaultValue: false
+            defaultValue: 0
         },
         meditation: {
             type: DataTypes.BOOLEAN,

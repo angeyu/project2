@@ -5,6 +5,7 @@
     </div>
     <div class="container col-12">
         <div class="row">
+<!-- leftside --> 
             <div id="leftside" class="col">
                 <div id="leftheader" class="row">
                     <div id="plscenter">
@@ -13,7 +14,7 @@
                 </div>
                 <!-- user avatar -->
                 <div id="healthboi"> 
-                    <img src="/assets/images/healthboi.png" alt="HEALTHBOI">
+                    <img src="/assets/images/healthboi.png" alt="HEALTHBOI" id="sparkleboi">
                 </div>
                 <!-- user stats -->
                 <div id="stats">
@@ -21,7 +22,7 @@
                         <h5>Today's Progress:</h5>
                         <div id= "activitystats" class="progress" style="height: 50px;">
                             <!-- change the width by increments of 20% -->
-                            <div class="progress-bar bg-warning" id="dailyTrackerBar" role="progressbar" style="width: 80%" 
+                            <div class="progress-bar bg-warning" id="dailyTrackerBar" role="progressbar" style="width: 0%" 
                             aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
 
@@ -33,11 +34,12 @@
                             <div class="progress" style="height: 50px;">
                                 <div class="progress-bar" id="waterTrackerBar" role="progressbar" style="width: 100%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><h3>{{ dataObj.waterAmount }} ounces</h3></div>
                             </div>
-                        </div>
-                        
-                </div> <!-- stats -->
-                
-            </div> <!-- leftside -->
+                        </div> 
+                </div> <!-- end stats -->            
+            </div>
+<!-- leftside --> 
+
+<!-- rightside --> 
             <div id="rightside" class="col">
                 <div id="rightheader" class="row">
                     <div id="plscenter">
@@ -46,57 +48,63 @@
                 </div>
                 <div class="row" id="rightcontent">
                     <!-- water -->
-                    <div class="col-8">drink water?</div>
-                    <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" data-status="{{dataObj.water}}">
-                        <span class="slider"></span>
-                        </label>
+                    <div class="col-8" style="margin-top: 20px;">drink water?</div>
+                    <div class="col-4" style="margin-top: 20px;"> 
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
+                                <input type="checkbox" class="userInput toggleStateBtn" id="water" data-status="{{dataObj.water}}" >
+                            </label>
+                        </div>
                     </div>
-                    <!-- howMuch -->
+                    <!-- waterAmount -->
                     <div class="col-8">how many ounces?</div>
-                    <div class="col-sm-4"> <!--yes/no switch: has "no" as the default(on) state so that the user action uncovers "yes"--> 
-                        <input type="text" id="waterInput" style="width: 100%;">
+                    <div class="col-sm-4">
+                        <input type="text" class="userInput" id="waterAmount" style="width: 100%;">
                     </div>
                     <!-- food -->
-                    <div class="col-8">eat enough food?</div>
-                    <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" data-status="{{dataObj.food}}">
-                        <span class="slider"></span>
-                        </label>
+                    <div class="col-8" style="margin-top: 8px;">eat enough food?</div>
+                    <div class="col-4" style="margin-top: 8px;">
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.food}}" id="food">
+                            </label>
+                        </div>
                     </div>
                     <!-- goal -->
                     <div class="col-8">accomplish a goal?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" data-status="{{dataObj.goal}}">
-                        <span class="slider"></span>
-                        </label>
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.goal}}" id="goal">
+                            </label>
+                        </div>
                     </div>
                     <!-- meditation -->
                     <div class="col-8">take a moment for yourself?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" data-status="{{dataObj.meditation}}">
-                        <span class="slider"></span>
-                        </label>
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.meditation}}" id="meditation">
+                            </label>
+                        </div>
                     </div>
                     <!-- pills -->
                     <div class="col-8">take your vitamins or medication?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" data-status="{{dataObj.pills}}">
-                        <span class="slider"></span>
-                        </label>
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round" >
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.pills}}" id="pills">
+                            </label>
+                        </div>
                     </div>
                     <!-- interaction -->
                     <div class="col-8">interact with friends?</div>
                     <div class="col-4">
-                        <label class="switch">
-                        <input type="checkbox" data-status="{{dataObj.interaction}}">
-                        <span class="slider"></span>
-                        </label>
+                        <div class="btn-group-toggle switch" data-toggle="buttons">
+                            <label class="btn btn-secondary slider round">
+                                <input type="checkbox" class="userInput toggleStateBtn" data-status="{{dataObj.interaction}}" id="interaction">
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <!--submit button-->
@@ -106,9 +114,10 @@
                 <!-- inspirational quotes API call -->
                 <div class="col-12"> 
                         <h5>Today's Inspiration:</h5>
-                        <h3 id="quotesAPI"></h3>
+                        <br>
+                        <h5 id="quotesApiQ"></h5>
+                        <h6 id="quotesApiA"></h6>
                     </div>
-                    
-            </div> <!-- rightside -->
+            </div> <!-- end rightside -->
         </div> <!-- <div class="row"> -->
     </div> <!-- <div class="container col-12"> -->
