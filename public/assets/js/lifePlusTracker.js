@@ -20,14 +20,24 @@ const apiPutObj = {
 
 // *** click event function returning class .active to checked buttons" ***
 function clickedYes() {
+<<<<<<< HEAD
     $("#label").attr("class", "active");
     console.log("class .active successfully added!");
     const activeBtnID = $('input').attr("id");
     console.log("active button id = " + activeBtnID);
+=======
+    $('#label').attr("class", "active")
+    console.log("clickedYes() attr added successfully!");
+
+    const activeBtnID = $('input').attr("id");
+    console.log(activeBtnID);
+
+>>>>>>> 71b157599c739b06b310dd6ec97818846965b975
 }
 // this function is called in the html as an onclick attribute
 
 // *** @ function to return html data and create key value pairs of active state buttons and push them to api array ***
+<<<<<<< HEAD
 /* function activeState() {
     if ($("#label").hasClass("active")) {
         const activeBtnID = $("#label").data("id");
@@ -35,6 +45,14 @@ function clickedYes() {
         apiPutObj["activeBtnID"] = "true";
     }; 
 }; */
+=======
+// function activeState() {
+//     if ($("#label").hasClass("active")) {
+//         const activeBtnID = $("#label").data("id");
+//         console.log(activeBtnID);
+//     }
+// };
+>>>>>>> 71b157599c739b06b310dd6ec97818846965b975
 // activeState();
 
 // *** @ return and store waterAmount:""; from html ***
