@@ -1,7 +1,7 @@
 {
-  "name": "weekly-meal-planner-project-2",
+  "name": "life-plus-project-2",
   "version": "1.0.0",
-  "description": "Meal planner app that allows users to track meals per day and plan accordingly",
+  "description": "A self care tracker to help take care of yourself!",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
