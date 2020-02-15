@@ -9,7 +9,7 @@ $("#todayDate").text(date);
 
 // *** create api PUT request array before buttons ***
 const apiPutArray = {
-    water: "",
+    water: $("#water").attr('data-status'),
     waterAmount: 0,
     meditation: "",
     pills: "",
@@ -18,15 +18,30 @@ const apiPutArray = {
     food: ""
 };
 
+console.log(apiPutArray);
+
 // *** @ click event function returning class .active to checked buttons" ***
-function clickedYes() {
-    $('#label').attr("class", "active")
-    console.log("clickedYes() attr added successfully!");
 
-    const activeBtnID = $('input').attr("id");
-    console.log(activeBtnID);
+//when any of the buttons with the below class are clicked
+$('.btn-group-toggle').on('click', function () {
+       // $(this).find('label').addClass('active');
 
-}
+    //and if the label of the particular toggle that was clicked is 'active'
+    if ($(this).find('label').hasClass('active')) {
+
+        // set the activeBtnID to that input's ID
+        const activeBtnID = $(this).find('input').attr("id");
+        console.log(activeBtnID);
+
+        $(this).find('input').attr("data-status", true);
+
+    } else {
+
+        $(this).find('input').attr("data-status", false);
+    }
+
+});
+
 // this function is called in the html as an onclick attribute
 
 // *** @ function to return html data and create key value pairs of active state buttons and push them to api array ***
@@ -39,12 +54,12 @@ function clickedYes() {
 // activeState();
 
 // *** @ return and store waterAmount:""; from html ***
-function waterAmount() {
-    const waterAmountVal = $("#waterAmount").value;
-    console.log(waterAmountVal);
-    apiPutArray["waterAmount"] = waterAmountVal;
-};
-waterAmount();
+// function waterAmount() {
+//     const waterAmountVal = $("#waterAmount").value;
+//     console.log(waterAmountVal);
+//     apiPutArray["waterAmount"] = waterAmountVal;
+// };
+// waterAmount();
 
 // *** submit button PUT click event ***  
 $("#dailySubmitBtn").click(function() {
